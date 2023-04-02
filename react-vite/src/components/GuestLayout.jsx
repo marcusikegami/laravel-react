@@ -1,5 +1,5 @@
 import { Outlet, Navigate, Link } from "react-router-dom";
-import { useStateContext } from "../contexts/ContextProvider"
+import { useStateContext } from "../context/ContextProvider"
 
 export default function GuestLayout() {
     // the useStateContext function is triggered at the beginning of the render process and will quickly redirect an authenticated user to the Dashboard

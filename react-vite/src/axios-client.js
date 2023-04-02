@@ -9,10 +9,10 @@ axiosClient.interceptors.request.use((config) => {
     return config;
 });
 
-axiosClient.interceptors.response.use(() => {
+axiosClient.interceptors.response.use(response => {
 
     return response;
-}, () => {
+}, error => {
     const { response } = error;
     if (response.status === 401) {
         localStorage.removeItem('ACCESS_TOKEN');

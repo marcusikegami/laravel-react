@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import axiosClient from '../axios-client';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useStateContext } from '../context/ContextProvider';
 
 export default function () {
 
@@ -26,8 +26,10 @@ export default function () {
                 setUser(data.user);
                 setToken(data.token);
             }) // There is no need to redirect the user to a specific page because the useStateContext function will redirect the user to the dashboard page
-            .catch(err => {
-                const response = err.response;
+            .catch(error => {
+              debugger;
+              console.error;
+                const response = error.response;
                 if(response && response.status === 422) {
                     setErrors(response.data.errors);
                 }
